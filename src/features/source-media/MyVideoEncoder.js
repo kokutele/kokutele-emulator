@@ -43,10 +43,12 @@ export default class MyVideoEncoder {
     this._videoReader = new window.VideoTrackReader(track)
 
     this._videoReader.start( frame => {
-      const keyFrame = this._reqKeyFrame || !(this._seq++ % this._interval)
+      const keyFrame = (this._reqKeyFrame || this._seq === 0)
 
       videoEncoder.encode(frame, {keyFrame})
       this._reqKeyFrame = false
+
+      this._seq = ++this._seq % this._interval
     })
   }
 
