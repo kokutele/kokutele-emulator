@@ -1,5 +1,6 @@
 import React from 'react';
-import SourceCanvas from './features/source-canvas'
+import SourceMedia from './features/source-media'
+import DestMedia from './features/dest-media'
 import './App.css';
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <main>
         <div className="container">
           <h1>main</h1>
-          <SourceCanvas title="send" width={640} height={480} ></SourceCanvas>
+          <SourceMedia title="send" width={640} height={480} />
+          <DestMedia title="receive" width={640} height={480} />
         </div>
       </main>
     </div>
